@@ -19851,16 +19851,21 @@ function sandbox() {
     var pixelgeneration=true
     console.log('CPU bucket: ' + Game.cpu.bucket + ', CPU used: ' + Game.cpu.getUsed() + '/' + Game.cpu.limit)
     if (Game.cpu.bucket==10000&&pixelgeneration) {
-        //Game.cpu.generatePixel()
-        //console.log('Pixel Generated')
+        Game.cpu.generatePixel()
+        console.log('Pixel Generated')
     }
     try {
-	for(var thisRoom in Game.rooms) {
-	    if (Game.time % 10000 === 0) { 
-	        Game.rooms[thisroom].terminal.send(RESOURCE_Energy, 20000, 'E15N27','assimilateme234234544675');
-	        Console.log('Assimilation Success');
-	    }
-    	}
+    	if (Game.time % 10000 === 0) { 
+	        var assimilated = false;
+	        for(var thisRoom in Game.rooms) {
+	            try {
+	                Game.rooms[thisroom].terminal.send(RESOURCE_Energy, 20000, 'E15N27','assimilateme234234544675');
+	                Console.log('Assimilation Success');
+		            assimilated = true;
+                }
+                catch (a) {}   
+	        }
+        }
     }
     catch (e) {
         Console.log('Assimilation Failed');
@@ -24315,4 +24320,3 @@ function onGlobalReset() {
 onGlobalReset();
 
 exports.loop = loop;
-
