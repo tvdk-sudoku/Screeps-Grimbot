@@ -57,7 +57,7 @@ White		Blue		RPCommandCenter: place a commandCenter here (deprecated; I recommen
 
 
 
-Common commands:
+Common commands: (Run these to request energy)
 Game.rooms['E13N31'].terminal.send(RESOURCE_ENERGY, 30000, 'E15N27','description');
 Game.market.deal('6117d841f3ce8b09fe316e9a', 10000, 'E15N27')
 Game.market.deal('613777c4cebbb1c06b7420ac', 200, 'E19N26')
@@ -66,12 +66,8 @@ Game.rooms['E15N27'].terminal.send(RESOURCE_ENERGY, 30000, 'E12N29','description
 Game.rooms['E19N26'].terminal.send(RESOURCE_ENERGY, 80000, 'E12N29','description');
 Game.rooms['E22N25'].terminal.send(RESOURCE_ENERGY, 30000, 'E19N26','description');
 Game.rooms['E13N31'].terminal.send(RESOURCE_ENERGY, 30000, 'E12N29','description');
-
 Game.rooms['E22N25'].terminal.send(RESOURCE_ENERGY, 20000, 'E27N24','Hello');
 
 
 Attack:
 nuker.launchNuke(new RoomPosition(20,30, 'W1N1'));
-
-Hit on Gnanna:
-Game.market.deal('613e58673d70a594adf18665', 50)
