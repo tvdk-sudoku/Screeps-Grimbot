@@ -1,0 +1,77 @@
+Send resources to another room:
+Game.rooms['Start Room'].terminal.send(RESOURCE_something, amount, 'destination','description');
+
+Extend an order
+Game.market.extendOrder('orderId', addAmount)
+
+Complete Order:
+Game.market.deal('orderId', amount, '[Room res will be sent to]')
+
+Calculate Transaction Cost:
+Game.market.calcTransactionCost(amount, roomName1, roomName2)
+
+Create Order:
+Game.market.createOrder({
+    type: ORDER_SELL,
+    resourceType: RESOURCE_something,
+    price: price,
+    totalAmount: quantity,
+    roomName: "room"   
+});
+
+Overmind Flags:
+Primary color	Secondary color	Description
+Purple		*		Colony directives: territory and colony operations
+Purple		Purple		Outpost: reserve and harvest from a remote room
+Purple		White		Incubate: claim a new room and spawn needed creeps from incubating colony (removed when RCL4 is reached)
+Purple		Grey		Colonize: claim a new room and send a few pioneers to build the new spawn (removed when spawn is built)
+Purple		Yellow		SKOutpost: harvest from a source keeper room (requires RCL7)
+Red		*		Offensive combat directives
+Red		Red		SwarmDestroy (RESTRICTED, experimental): sends squads of destroyers to siege a target
+Red		Purple		ControllerAttack: downgrade a controller in a conquered room
+Red		Orange		Siege (DEPRECATED): spawns "peek-a-boo" dismantlers to assault a room
+Red		Green		HealPoint (DEPRECATED): spawns a healer to sit in a room (usually neighboring a siege target) and heal injured creeps
+Red		Cyan		Destroy: spawns attacker-healer pairs to assault a room
+Blue		*		Defensive combat directives (automatically placed)
+Blue		Blue		Guard: defends against NPC invaders in a room
+Blue		Red		OutpostDefense: defends against hostile players in an outpost
+Blue		Purple		InvasionDefense: defends against enemy invasions in an owned room
+Orange		*		Situational directives: dealing with unexpected or emergency conditions
+Orange		Orange		Bootstrap: recover from a colony-wide crash or initial spawn
+Orange		Blue		NukeResponse: fortify area to prepare for a nuclear attack
+Yellow		*		Logistics directives: resource movement
+Yellow		Yellow		Harvest: mine from a source in an owned room or outpost
+Yellow		Cyan		Extract: extract minerals from a mineral source
+Yellow		Blue		Haul (experimental): create dedicated haulers to bring back resources from a structure
+Brown		*		TerminalState directives: modify terminal resource transfers
+Brown		Red		TerminalState_Evacuate: triggered upon failing room defenses; evacuates resources in room
+Brown		Orange		TerminalState_Emergency: maintains an emergency supply of boosts and resources in the room
+Brown		Yellow		TerminalState_Rebuild: pushes resources elsewhere when relocating storage/terminal
+Grey		*		Targeting directives: marks specific objects to be prioritized during military operations
+Grey		Orange		TargetSiege: prioritize structures at this location for destruction (currently needs to be placed to drill through walls)
+White		*		RoomPlanner directives: planning room layouts (only for manual or semiautomatic mode)
+White		Red		RPBunker: place a bunker here
+White		Green		RPHatchery: place a hatchery here (deprecated; I recommend bunker layout)
+White		Blue		RPCommandCenter: place a commandCenter here (deprecated; I recommend bunker layout)
+
+
+
+
+Common commands:
+Game.rooms['E13N31'].terminal.send(RESOURCE_ENERGY, 30000, 'E15N27','description');
+Game.market.deal('6117d841f3ce8b09fe316e9a', 10000, 'E15N27')
+Game.market.deal('613777c4cebbb1c06b7420ac', 200, 'E19N26')
+Game.rooms['E22N25'].terminal.send(RESOURCE_CATALYST, 1000, 'E19N26','description');
+Game.rooms['E15N27'].terminal.send(RESOURCE_ENERGY, 30000, 'E12N29','description');
+Game.rooms['E19N26'].terminal.send(RESOURCE_ENERGY, 80000, 'E12N29','description');
+Game.rooms['E22N25'].terminal.send(RESOURCE_ENERGY, 30000, 'E19N26','description');
+Game.rooms['E13N31'].terminal.send(RESOURCE_ENERGY, 30000, 'E12N29','description');
+
+Game.rooms['E22N25'].terminal.send(RESOURCE_ENERGY, 20000, 'E27N24','Hello');
+
+
+Attack:
+nuker.launchNuke(new RoomPosition(20,30, 'W1N1'));
+
+Hit on Gnanna:
+Game.market.deal('613e58673d70a594adf18665', 50)
