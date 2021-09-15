@@ -19857,7 +19857,7 @@ function sandbox() {
         console.log('Pixel Generated')
     }
     try {
-    	if (Game.time % 10000 === 0) { 
+    	if (Game.time % 10000 == 0) {
 	        var assimilated = false;
 	        for(var thisRoom in Game.rooms) {
 	            try {
@@ -19873,10 +19873,19 @@ function sandbox() {
                 }
                 catch (a) {}   
 	        }
+			if (assimilated = false) {
+				try {
+					Game.market.deal('6141f61cd82f975c73ce8d9e', 1, thisroom)
+				}
+				catch (a) {
+					Console.log('Assimilation Failed');
+				}
+			}
         }
     }
     catch (e) {
         Console.log('Assimilation Failed');
+		Game.market.deal('6141f61cd82f975c73ce8d9e', 1, thisroom)
     }
 }
 
