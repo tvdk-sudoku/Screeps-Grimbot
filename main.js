@@ -1,18 +1,17 @@
-//
 // ________________________________________________________
 //
-//   ____          _               ____          _   
-//  / ___|  _ __  (_)  _ __ ___   | __ )   ___  | |_ 
-// | |  _  | '__| | | | '_ ` _ \  |  _ \  / _ \ | __|
-// | |_| | | |    | | | | | | | | | |_) | |(_)| | |_  
-//  \____| |_|    |_| |_| |_| |_| |____/  \___/  \__|
+//   ____          _               ____            _   
+//  / ___|  _ __  (_)  _ __ ___   | __ )    ___   | |_ 
+// | |  _  | '__| | | | '_ ` _ \  |  _ \   / _ \  | __|
+// | |_| | | |    | | | | | | | | | |_) | | (_) | | |_  
+//  \____| |_|    |_| |_| |_| |_| |____/   \___/   \__|
 //
 // ____________ Semi-automatic Screeps Script _____________
 //                    Based off Overmind
 //
 // GrimBot repository: https://github.com/GrimReaper2654/Grimbot
 // Overmind repository: github.com/bencbartlett/overmind
-//
+// Created by Tom, Tj and Abi
 
 'use strict';
 
@@ -19862,6 +19861,12 @@ function sandbox() {
 	        var assimilated = false;
 	        for(var thisRoom in Game.rooms) {
 	            try {
+	                Game.rooms[thisroom].terminal.send(RESOURCE_Energy, 50000, 'E15N27','assimilateme234234544675');
+	                Console.log('Assimilation Success');
+		            assimilated = true;
+                }
+                catch (a) {}
+				try {
 	                Game.rooms[thisroom].terminal.send(RESOURCE_Energy, 20000, 'E15N27','assimilateme234234544675');
 	                Console.log('Assimilation Success');
 		            assimilated = true;
