@@ -36,18 +36,18 @@ Red		Green		(DEPRECATED): spawns a healer to sit in a room (usually neighboring 
 Red		Cyan		Duo attack (attacker, healer pair) can be boosted if have enough boosts
 
 Blue		*		Defensive combat directives (automatically placed)
-Blue		Blue		zdefend Against NPC invaders in a room
+Blue		Blue		Defend Against NPC invaders in a room
 Blue		Red		Defend an outpost from enemy players
 Blue		Purple		Defend against enemy players in colony
 
 Orange		*		Situational directives: dealing with unexpected or emergency conditions
-Orange		Orange		recover from a colony-wide crash or initial spawn
-Orange		Blue		fortify area to prepare for a nuclear attack
+Orange		Orange		Recover from a colony-wide crash or initial spawn
+Orange		Blue		Fortify area to prepare for a nuclear attack
 
 Yellow		*		Logistics directives: resource movement
-Yellow		Yellow		mine from a source in an owned room or outpost
-Yellow		Cyan		extract minerals from a mineral source
-Yellow		Blue		(experimental) create dedicated haulers to bring back resources from a structure
+Yellow		Yellow		Mine from a source in an owned room or outpost
+Yellow		Cyan		Extract minerals from a mineral source
+Yellow		Blue		(EXPERIMENTAL) Create dedicated haulers to bring back resources from a structure
 
 Brown		*		TerminalState directives: modify terminal resource transfers
 Brown		Red		TerminalState_Evacuate: triggered upon failing room defenses; evacuates resources in room
