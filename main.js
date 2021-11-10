@@ -11,7 +11,7 @@
 //
 // GrimBot repository: https://github.com/GrimReaper2654/Grimbot
 // Overmind repository: github.com/bencbartlett/overmind
-// Created by Tom, Taj and Abi
+// Created by Tom, Grim4Reaper and Abi
 
 'use strict';
 
