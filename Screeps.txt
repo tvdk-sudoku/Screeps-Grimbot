@@ -26,7 +26,7 @@ Purple		*		Colony directives: territory and colony operations
 Purple		Purple		Create Outpost
 Purple		White		Incubate (Assist spawning) colony until RCL7
 Purple		Grey		Flag room for colonisation
-Purple		Yellow		Harvest from SK room (min RCL7 colony)
+Purple		Yellow		Harvest from SK room (ONLY IN LVL 8 COLONY)
 
 Red		*		Offensive combat directives
 Red		Red		Quad Squad attack (Tigga style)
